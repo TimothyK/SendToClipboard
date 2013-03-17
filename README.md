@@ -16,6 +16,6 @@ There is no license on this software.  It is totally free.  Users are expected t
 
 Dependencies
 ============
-Microsoft .NET Framework 3.5 Client Profile
-Solution file is for Microsoft Visual Studio 2012.  Programming language is VB.
-Setup.msi created with WiX 3.7 (http://wixtoolset.org/)
+- Microsoft .NET Framework 3.5 Client Profile
+- Solution file is for Microsoft Visual Studio 2012.  Programming language is VB.
+- Setup.msi created with WiX 3.7 (http://wixtoolset.org/)
