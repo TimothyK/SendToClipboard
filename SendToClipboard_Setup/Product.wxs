@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product 
+			Id="2C88042C-2980-4513-80C8-33AEB525E475" 
+			Name="Send To Clipboard 1.0" 
+			Language="1033"
+			Version="1.0.0.0" 
+			Manufacturer="Send To Clipboard" 
+			UpgradeCode="1fdabfc5-a6ba-4f02-a49c-c2ecfab3d94d"
+	>
+		<Package 
+			InstallerVersion="200" 
+			Compressed="yes" 
+			InstallScope="perMachine"
+		/>
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of Send To Clipboard is already installed." />
+		<Media Id="1" Cabinet="SendToClipboard.cab" EmbedCab="yes" DiskPrompt="CD-ROM #1" />
+		<Property Id="DiskPrompt" Value="Send To Clipboard 1.0 Installation" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="APPLICATIONROOTDIRECTORY" Name="SendToClipboard"/>
+      </Directory>
+      <Directory Id="SendToFolder" />
+    </Directory>
+
+    <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+      <Component Id="SendToClipboard.exe" Guid="EB69E0C5-564F-4088-9FC5-7E64C1C4377D">
+        <File Id="SendToClipboard.exe" Source="..\SendToClipboard\bin\Release\SendToClipboard.exe" KeyPath="yes" Checksum="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="SendToFolder">
+      <Component Id="ApplicationShortcut" Guid="DF65CCB9-1470-4054-B2AC-D82EEED8B6AA">
+        <Shortcut Id="ApplicationSendToShortcut"                      
+                  Name="Filename to Clipboard"                    
+                  Description="Sends the filename to the clipboard"                    
+                  Target="[APPLICATIONROOTDIRECTORY]SendToClipboard.exe"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                  Show="minimized"
+        />
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+      <ComponentRef Id="SendToClipboard.exe" />
+      <ComponentRef Id="ApplicationShortcut" />   
+    </Feature>
+  </Product>
+</Wix>
