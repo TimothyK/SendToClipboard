@@ -10,6 +10,11 @@ The HTML format will create 2 hyperlinks out of the filename.  The first hyperli
 
 Mapped drives letters will be reported as full UNC paths.  Therefore the hyperlinks will work on computers that don't have the same drive letter mappings.
 
+Download
+========
+Built Install Disk is available at:
+https://sourceforge.net/projects/senttoclipboard/files/latest/download
+
 License
 =======
 There is no license on this software.  It is totally free.  Users are expected to only use this software for good and not for evil.
