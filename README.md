@@ -12,12 +12,11 @@ Mapped drives letters will be reported as full UNC paths.  Therefore the hyperli
 
 Download
 ========
-Built Install Disk is available at:
-https://sourceforge.net/projects/senttoclipboard/files/latest/download
+See the Releases for the an MSI installer.  https://github.com/TimothyK/SendToClipboard/releases/tag/v1.0
 
 License
 =======
-There is no license on this software.  It is totally free.  Users are expected to only use this software for good and not for evil.
+This software is Public Domain.  Anyone can use the source code in any way they wish.  Users are expected to only use this software for good and not for evil.
 
 Dependencies
 ============
