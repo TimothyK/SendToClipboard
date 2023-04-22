@@ -14,6 +14,28 @@ Download
 ========
 See the Releases for the an MSI installer.  https://github.com/TimothyK/SendToClipboard/releases/tag/v1.0
 
+Registry Hacks
+==============
+Add the tool to your Windows Explorer main context meny (instead of the Send To folder) with the following registry hacks.  These can be saved to a .reg file and imported by double clicking the file
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\SendToClipboard]
+@="Filename To Clipboard"
+"Icon"="C:\\Program Files (x86)\\SendToClipboard\\SendToClipboard.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\SendToClipboard\command]
+@="C:\\Program Files (x86)\\SendToClipboard\\SendToClipboard.exe \"%L\""
+
+[HKEY_CLASSES_ROOT\Folder\shell\SendToClipboard]
+@="FIlename To Clipboard"
+"Icon"="C:\\Program Files (x86)\\SendToClipboard\\SendToClipboard.exe"
+
+[HKEY_CLASSES_ROOT\Folder\shell\SendToClipboard\command]
+@="C:\\Program Files (x86)\\SendToClipboard\\SendToClipboard.exe \"%L\""
+```
+
 License
 =======
 This software is Public Domain.  Anyone can use the source code in any way they wish.  Users are expected to only use this software for good and not for evil.
